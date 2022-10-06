@@ -1,16 +1,10 @@
 <?php
-if(mail("Dheeraj.kukreja78@gmail.com","Success","Send mail from localhost using PHP")) {
-  echo "mail send";
-} else {
-  echo "not send";
-}
-
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    
+    $servername = getenv('DB_HOST');
+    $username = getenv('DB_USER');
+    $password = getenv('DB_PASS');
+    $database = getenv('DB_NAME')
     // Create connection
-    $conn = new mysqli($servername, $username, $password,'rtcamp_assignment');
+    $conn = new mysqli($servername, $username, $password,$database);
 
     
     // Check connection
